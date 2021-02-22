@@ -12,8 +12,7 @@ Where ***Mn*** = output value and this value is then accordingly fed to the outp
 ## Implementation
 We have used Finite State Machine architecture to carry out the process of reading the input from the quadrature incremental Encoder, calculating the values of P, I, D, Adjusting them so that they can be interpreted in terms of sign an magnitude an then passing it to the PWM_op state. States are as follows.</br>
 The quadrature encoder works as follows : The A,B pulses of the encoder are phase shifted by 90° or -90° based on the sense of rotation. We sampled the signals at the rising and falling edges and based on the state of other wire we can tell the angle of rotation since there are a fixed no. of pulses that an encoder can generate in 1 rotation known as its ppr(pulse per rotation) value. </br>
-![](https://github.com/Keshav242/PID-MOTOR-POSITION-CONTROL-USING-AN-FPGA/blob/main/Images%20and%20Videos/Images/Incremental_directional_encoder.gif)</br>
-![](https://howtomechatronics.com/wp-content/uploads/2016/07/Rotary-Encoder-Output-Signal-Working-Principle-Photo-.png)
+<img src = "https://howtomechatronics.com/wp-content/uploads/2016/07/Rotary-Encoder-Output-Signal-Working-Principle-Photo-.png" width = "300" /><img src = "https://github.com/Keshav242/PID-MOTOR-POSITION-CONTROL-USING-AN-FPGA/blob/main/Images%20and%20Videos/Images/Incremental_directional_encoder.gif" width = "200" />
 - **Reset** </br>
 It is the state achieved when the reset signal is active. It sets the error, previous error, accumulated error, P, I, D to zero. Next state is calculate PID. This state is achieved through synchronous input. The machine starts from this state whenever it starts afresh.
 - **Calculate PID**</br>
