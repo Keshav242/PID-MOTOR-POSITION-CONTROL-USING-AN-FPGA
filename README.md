@@ -11,17 +11,17 @@ Now as we are dealing with a digital system hence, we have to work on a discreti
 Where ***Mn*** = output value and this value is then accordingly fed to the output which then acts accordingly.
 ## Implementation
 We have used Finite State Machine architecture to carry out the process of reading the input from the quadrature incremental Encoder, calculating the values of P, I, D, Adjusting them so that they can be interpreted in terms of sign an magnitude an then passing it to the PWM_op state. States are as follows.</br>
-*Encoder Description under the heading Sensing Input* </br>
-![](https://github.com/Keshav242/PID-MOTOR-POSITION-CONTROL-USING-AN-FPGA/blob/main/Images%20and%20Videos/Images/Incremental_directional_encoder.gif)</br>
-- Reset </br>
+The quadrature encoder works as follows : The A,B pulses of the encoder are phase shifted by 90° or -90° based on the sense of rotation. We sampled the signals at the rising and falling edges and based on the state of other wire we can tell the angle of rotation since there are a fixed no. of pulses that an encoder can generate in 1 rotation known as its ppr(pulse per rotation) value. </br>
+<img src = "https://github.com/Keshav242/PID-MOTOR-POSITION-CONTROL-USING-AN-FPGA/blob/main/Images%20and%20Videos/Images/Incremental_directional_encoder.gif" width = "300" /><img src = "https://howtomechatronics.com/wp-content/uploads/2016/07/Rotary-Encoder-Output-Signal-Working-Principle-Photo-.png" width = "500" />
+- **Reset** </br>
 It is the state achieved when the reset signal is active. It sets the error, previous error, accumulated error, P, I, D to zero. Next state is calculate PID. This state is achieved through synchronous input. The machine starts from this state whenever it starts afresh.
-- Calculate PID</br>
+- **Calculate PID**</br>
 In this state the value of P, I, D is calculated using the specified values of Kp, Ki, Kd, and the values of error, previous error, accumulated error. Next state is Adjust.
-- Adjust</br>
+- **Adjust**</br>
 In this state the value of sum that is P + I + D is so adjusted so that it does not exceed the limit of the possible values of the output.
-- Calculate Output</br>
+- **Calculate Output**</br>
 This state produces the output of sign and calculates the duty cycle required further it pushes the value of error to previous error and adds the value of error to the accumulated error.
-- PWM Output</br>
+- **PWM Output**</br>
 This state generates the PWM output. It uses the duty cycle calculated in the previous state and sets a counter which counts till Max value minus duty cycle and then changes the signal to high then again count till the duty cycle thus, overall giving the required duty cycle.</br>
 Finally we Tune the PID controller by controlling the values of Kp, Kd, Ki.
 ## Limitation
@@ -29,8 +29,8 @@ Finally we Tune the PID controller by controlling the values of Kp, Kd, Ki.
 ## Conclusion
 Motor position control is one of the highest used aspects of a machine. So here we have implemented this on an FPGA taking advantage of the high amount of parallel processing and fast execution of tasks so that the machine has a very less response time and it can react to situations quickly it even has a great amount of accuracy and precision. This in turn makes the machine more reliable and more useful in task where there is high amount of risk involved such as in this sector of healthcare.
 ## Team Members
-- Keshav Dixit
-- Kshitij Bithel
+- [Keshav Dixit](https://github.com/Keshav242)
+- [Kshitij Bithel](https://github.com/KSHITIJBITHEL)
 ## Reference
 - https://en.wikipedia.org/wiki/PID_controller#Mathematical_form
 - https://www.researchgate.net/figure/The-structure-of-typical-control-system-With-PID-controller_fig1_304187695
