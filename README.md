@@ -29,6 +29,8 @@ Finally we Tune the PID controller by controlling the values of Kp, Kd, Ki.
 - Here we have not use Floating points so the resolution is limited to integers.
 ## Conclusion
 Motor position control is one of the highest used aspects of a machine. So here we have implemented this on an FPGA taking advantage of the high amount of parallel processing and fast execution of tasks so that the machine has a very less response time and it can react to situations quickly it even has a great amount of accuracy and precision. This in turn makes the machine more reliable and more useful in task where there is high amount of risk involved such as in this sector of healthcare.
+## Working Video
+[![Video](https://img.youtube.com/vi/acj7deKN-vs/0.jpg)](https://youtu.be/acj7deKN-vs)
 ## Team Members
 - [Keshav Dixit](https://github.com/Keshav242)
 - [Kshitij Bithel](https://github.com/KSHITIJBITHEL)
