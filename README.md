@@ -1,9 +1,9 @@
 # PID-MOTOR-POSITION-CONTROL-USING-AN-FPGA
 Embedded System Project
 ## Abstract
-The Aim of this Project is to present an implementation of a PID (Proportional, Integral, Derivative) Motor Position controller on an FPGA (Field Programmable Gate Array). Nowadays we all want automation in our work. And we want Machines to do the repetitive work and that too with precision and the ability to correct themselves. We use PID control which is a quite simple and a robust technique to achieve a desired output. Here we have used FPGA and defined the circuit in HDL so that we have the power of parallel processing and thus Fast response time and high precision.
+The Aim of this Project is to present an implementation of a PID (Proportional, Integral, Derivative) Motor Position controller on an FPGA (Field Programmable Gate Array). Nowadays we all want automation in our work. And we want Machines to do the repetitive work and that too with precision and the ability to correct themselves. We use PID control which is a quite intuitive and a robust technique to achieve a desired output. Here we have used FPGA and defined the circuit in VHDL so that we have the power of parallel processing and thus Fast response time and high precision.
 ## Motivation
-Presently Motors are used in numerous fields such as in factories as Robotic Arms, in Healthcare as Precision Machines etc., these applications require precise control of motor's positions and Accurate movements. For this we need a Precise motor position controller with very low latency. Hence we needed a system with the capability of parallel processing. So we have implemented it on n FPGA.
+Presently Motors are used in numerous fields such as in factories as Robotic Arms, in Healthcare as Precision Machines etc., these applications require precise control of motor's positions and Accurate movements. For this we need a Precise motor position controller with very low latency. Hence, we needed a system with the capability of parallel processing. So we have implemented it on FPGA.
 ## Theory
 The distinguishing feature of the PID controller is the ability to use the three control terms of proportional, integral and derivative influence on the controller output to apply accurate and optimal control. </br>![](https://github.com/Keshav242/PID-MOTOR-POSITION-CONTROL-USING-AN-FPGA/blob/main/Images%20and%20Videos/Images/PID_control.png)</br>
 which continuously calculates an error value ***e(t)*** as the difference between a desired setpoint ***SP = r(t)*** and a measured process variable ***PV = y(t) : e(t) = r(t) - y(t)***, and applies a correction based on proportional, integral, and derivative terms. The controller attempts to minimize the error over time by adjustment of a control variable ***u(t)***, such as the opening of a control valve, to a new value determined by a weighted sum of the control terms. </br>![](https://github.com/Keshav242/PID-MOTOR-POSITION-CONTROL-USING-AN-FPGA/blob/main/Images%20and%20Videos/Images/PID_formula.png)</br>
@@ -34,7 +34,7 @@ Motor position control is one of the highest used aspects of a machine. So here 
 ## Team Members
 - [Keshav Dixit](https://github.com/Keshav242)
 - [Kshitij Bithel](https://github.com/KSHITIJBITHEL)
-## Reference
+## References
 - https://en.wikipedia.org/wiki/PID_controller#Mathematical_form
 - https://www.researchgate.net/figure/The-structure-of-typical-control-system-With-PID-controller_fig1_304187695
 - https://en.wikipedia.org/wiki/Process_variable
